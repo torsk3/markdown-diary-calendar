@@ -1,0 +1,59 @@
+{
+  "name": "markdown-diary-calendar",
+  "displayName": "markdown-diary-calendar",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+        "viewsContainers": {
+            "activitybar": [{
+                "id": "markdown-calendar",
+                "title": "Markdown Calendar",
+                "icon": "resources/calendar.svg"
+            }]
+        },
+        "views": {
+            "markdown-calendar": [{
+                "type": "webview",
+                "id": "markdown-calendar.calendarView",
+                "name": "Calendar"
+            }]
+        },
+        "configuration": {
+            "title": "Markdown Calendar",
+            "properties": {
+                "markdownCalendar.filePathPattern": {
+                    "type": "string",
+                    "default": "YYYY/MM/DD.md",
+                    "description": "Pattern for markdown file paths. Use YYYY for year, MM for month, and DD for day."
+                }
+            }
+        }
+    },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
