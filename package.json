@@ -1,5 +1,10 @@
 {
   "name": "markdown-diary-calendar",
+  "publisher": "torsk3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/markdown-diary-calendar"
+  },
   "displayName": "markdown-diary-calendar",
   "description": "",
   "version": "0.0.1",
